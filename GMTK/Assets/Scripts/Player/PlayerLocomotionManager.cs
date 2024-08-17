@@ -21,10 +21,15 @@ public class PlayerLocomotionManager : MonoBehaviour
     public float jumpStartTime;
     public float jumpTime;
     public float jumpForce;
+    public bool hasJumped = false;
 
     [Header("Animations")]
     public bool startingMoveAnimationPlayed = false;
-    
+
+
+    [Header("Movement bools")]
+    private bool stopMoving = false;
+    private bool stopJumping = false;
     private void Awake()
     {
         player = GetComponent<PlayerManager>();
@@ -78,24 +83,40 @@ public class PlayerLocomotionManager : MonoBehaviour
 
     private void HandleJumpingMovement()
     {
+        if (stopJumping)
+        {
+            return;
+        }
+
+
         if (player.isGrounded == true && player.playerInputManager.isJumping == true)
         {
             player.animator.SetBool("IsRising", true);
             jumpTime = jumpStartTime;
             player.rb.velocity = Vector2.up * jumpForce;
+            hasJumped = true;
         }
-
-        if (player.playerInputManager.isJumping == true)
+        else if (player.playerInputManager.isJumping == true)
         {
-            if (jumpTime > 0)
+            if (jumpTime > 0 && hasJumped)
             {
                 player.rb.velocity = Vector2.up * jumpForce;
                 jumpTime -= Time.deltaTime;
             }
         }
+        else if (!player.playerInputManager.isJumping)
+        {
+            // Reset jump status when the jump button is released
+            hasJumped = false;
+        }
     }
     private void HandlePlayerMovement()
     {
+        if (stopMoving)
+        {
+            return;
+        }
+
         Vector2 direction = player.playerInputManager.GetMoveDirection();
 
         if (direction != Vector2.zero)
@@ -143,7 +164,35 @@ public class PlayerLocomotionManager : MonoBehaviour
         }
 
         
+    }
 
- 
+    public void StopGroundMovements(float time=2f)
+    {
+        StartCoroutine(ResetGroundBool(time));
+    }
+
+    private IEnumerator ResetGroundBool(float time)
+    {
+        stopMoving = true;
+        yield return new WaitForSeconds(time);
+        stopMoving = false;
+    }
+
+    public void StopJumpMovements(float time = 2f)
+    {
+        StartCoroutine(ResetJumpBool(time));
+    }
+
+    private IEnumerator ResetJumpBool(float time)
+    {
+        stopJumping = true;
+        yield return new WaitForSeconds(time);
+        stopJumping = false;
+    }
+
+    public void StopAllMovements(float time=2f)
+    {
+        StopGroundMovements(time);
+        StopJumpMovements(time);
     }
 }

@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject playerModel;
     public SpriteRenderer spriteRenderer;
     public GameObject legs;
+    public PlayerLocomotionManager playerLocomotionManager;
 
     [Header("Animation")]
     public Animator animator;
@@ -32,6 +33,7 @@ public class PlayerManager : MonoBehaviour
         Application.targetFrameRate = 60;
         rb = GetComponent<Rigidbody2D>();
         playerInputManager = GetComponent<PlayerInputManager>();
+        playerLocomotionManager = GetComponent<PlayerLocomotionManager>();
         
     }
     private void Start()
@@ -48,6 +50,10 @@ public class PlayerManager : MonoBehaviour
             nextTimeToScale = Time.time + scaleRate;
             transform.localScale = new Vector3(transform.localScale.x - scaleLoss, transform.localScale.y - scaleLoss, transform.localScale.z);
         }
+
+
+        // TESTINGGGGGGGGGg
+        
     }
 
 
