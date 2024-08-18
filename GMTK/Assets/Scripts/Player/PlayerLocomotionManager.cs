@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -30,34 +31,55 @@ public class PlayerLocomotionManager : MonoBehaviour
     [Header("Movement bools")]
     private bool stopMoving = false;
     private bool stopJumping = false;
+
+    [Header("Dashing")]
+    public bool canDash = true;
+    public bool isDashing;
+    public float dashingPower = 24f;
+    private float dashingTime = 0.2f;
+    public float dashingCooldown = 1f;
+    private TrailRenderer trailRenderer;
     private void Awake()
     {
         player = GetComponent<PlayerManager>();
+        trailRenderer = GetComponent<TrailRenderer>();
         
     }
 
     private void Update()
     {
+        if (isDashing)
+        {
+            return;
+        }
+
+        if (player.playerInputManager.isDashing && canDash)
+        {
+            StartCoroutine(Dash());
+        }
+
         HandleJumpingMovement();
     }
 
     private void FixedUpdate()
     {
+        if (isDashing)
+        {
+            return;
+        }
+
         ApplyGravity();
         HandlePlayerMovement();
     }
 
     private void ApplyGravity()
     {
-
         if (player.isGrounded)
         {
             player.rb.AddForce(new Vector2(0, gravityOnGround), ForceMode2D.Force);
-            Debug.Log("applying ground gravity");
         }    
         else if (!player.isGrounded)
         {
-            Debug.Log("applying air gravity");
             player.rb.AddForce(new Vector2(0, gravityOnGround), ForceMode2D.Force);
         }
            
@@ -194,5 +216,25 @@ public class PlayerLocomotionManager : MonoBehaviour
     {
         StopGroundMovements(time);
         StopJumpMovements(time);
+    }
+
+    private IEnumerator Dash()
+    {
+        Vector2 direction = player.playerInputManager.GetMoveDirection();
+        canDash = false;
+        isDashing = true;
+        player.animator.SetBool("IsDashing", true);
+        float originalGravity = player.rb.gravityScale;
+        player.rb.gravityScale = 0f;
+        player.rb.velocity = new Vector2(direction.normalized.x * dashingPower, 0f);
+        trailRenderer.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        trailRenderer.emitting = false;
+        player.rb.gravityScale = originalGravity;
+        player.animator.SetBool("IsDashing", false);
+        isDashing = false;
+        player.rb.velocity = new Vector2(0f, 0f);
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
     }
 }

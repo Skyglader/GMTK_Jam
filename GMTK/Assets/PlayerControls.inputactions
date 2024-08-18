@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "Hold(duration=1.401298E-45,pressPoint=1.401298E-45)",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Dashing",
+                    "type": "Button",
+                    "id": "02cf2f9b-eeef-426c-a80d-3abe261d56d7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -66,6 +75,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jumping",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b0d3b543-5a33-430c-89f9-cd8037983148",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dashing",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -11,6 +11,7 @@ public class PlayerManager : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public GameObject legs;
     public PlayerLocomotionManager playerLocomotionManager;
+    public PlayerCombatManager playerCombatManager;
 
     [Header("Animation")]
     public Animator animator;
@@ -24,8 +25,10 @@ public class PlayerManager : MonoBehaviour
     public float scaleRate;
     public float scaleLoss;
     public float nextTimeToScale;
-
     public float radiusOffset = 0.5f;
+
+    [Header("Stats")]
+    public float maxScale = 7f;
 
     [SerializeField] private float groundCheckRadius = 2f;
     private void Awake()
@@ -34,6 +37,7 @@ public class PlayerManager : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerInputManager = GetComponent<PlayerInputManager>();
         playerLocomotionManager = GetComponent<PlayerLocomotionManager>();
+        playerCombatManager = GetComponent<PlayerCombatManager>();
         
     }
     private void Start()
@@ -72,6 +76,22 @@ public class PlayerManager : MonoBehaviour
         }
 
         return touchGround;
+    }
+
+    public void ChangeScale(float scale, bool playHitAnim)
+    {
+        if (scale < 0 && playHitAnim)
+        {
+            animator.CrossFade("TakeHit", 0.1f);
+        }
+        if (transform.localScale.x + scale < maxScale)
+        {
+            transform.localScale = new Vector3(transform.localScale.x + scale, transform.localScale.y + scale, 1f);
+        }
+        else if (transform.localScale.x + scale >= maxScale)
+        {
+            transform.localScale = new Vector3(maxScale, maxScale, 1f);
+        }
     }
 
     private void OnDrawGizmos()

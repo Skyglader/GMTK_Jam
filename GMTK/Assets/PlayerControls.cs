@@ -44,6 +44,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Hold(duration=1.401298E-45,pressPoint=1.401298E-45)"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dashing"",
+                    ""type"": ""Button"",
+                    ""id"": ""02cf2f9b-eeef-426c-a80d-3abe261d56d7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -90,6 +99,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Jumping"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b0d3b543-5a33-430c-89f9-cd8037983148"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dashing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -128,6 +148,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_PlayerMovement = asset.FindActionMap("PlayerMovement", throwIfNotFound: true);
         m_PlayerMovement_Movement = m_PlayerMovement.FindAction("Movement", throwIfNotFound: true);
         m_PlayerMovement_Jumping = m_PlayerMovement.FindAction("Jumping", throwIfNotFound: true);
+        m_PlayerMovement_Dashing = m_PlayerMovement.FindAction("Dashing", throwIfNotFound: true);
         // PlayerActions
         m_PlayerActions = asset.FindActionMap("PlayerActions", throwIfNotFound: true);
         m_PlayerActions_Attack = m_PlayerActions.FindAction("Attack", throwIfNotFound: true);
@@ -194,12 +215,14 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private List<IPlayerMovementActions> m_PlayerMovementActionsCallbackInterfaces = new List<IPlayerMovementActions>();
     private readonly InputAction m_PlayerMovement_Movement;
     private readonly InputAction m_PlayerMovement_Jumping;
+    private readonly InputAction m_PlayerMovement_Dashing;
     public struct PlayerMovementActions
     {
         private @PlayerControls m_Wrapper;
         public PlayerMovementActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_PlayerMovement_Movement;
         public InputAction @Jumping => m_Wrapper.m_PlayerMovement_Jumping;
+        public InputAction @Dashing => m_Wrapper.m_PlayerMovement_Dashing;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -215,6 +238,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Jumping.started += instance.OnJumping;
             @Jumping.performed += instance.OnJumping;
             @Jumping.canceled += instance.OnJumping;
+            @Dashing.started += instance.OnDashing;
+            @Dashing.performed += instance.OnDashing;
+            @Dashing.canceled += instance.OnDashing;
         }
 
         private void UnregisterCallbacks(IPlayerMovementActions instance)
@@ -225,6 +251,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Jumping.started -= instance.OnJumping;
             @Jumping.performed -= instance.OnJumping;
             @Jumping.canceled -= instance.OnJumping;
+            @Dashing.started -= instance.OnDashing;
+            @Dashing.performed -= instance.OnDashing;
+            @Dashing.canceled -= instance.OnDashing;
         }
 
         public void RemoveCallbacks(IPlayerMovementActions instance)
@@ -292,6 +321,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJumping(InputAction.CallbackContext context);
+        void OnDashing(InputAction.CallbackContext context);
     }
     public interface IPlayerActionsActions
     {
