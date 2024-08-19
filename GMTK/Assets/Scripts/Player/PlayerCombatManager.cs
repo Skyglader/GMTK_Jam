@@ -19,6 +19,9 @@ public class PlayerCombatManager : MonoBehaviour
     public float colliderSize;
     public LayerMask whatIsEnemy;
 
+    public bool stopAllAttacks = false;
+    public GameObject bloodSplatter;
+
 
     [Header("Damage and Heal Values")]
     public float healPerHit;
@@ -36,6 +39,7 @@ public class PlayerCombatManager : MonoBehaviour
 
     private void Update()
     {
+        if (player.isDead) return;
         HandleAttackMovement();
         currentState = player.animator.GetCurrentAnimatorStateInfo(1);
     }
@@ -127,8 +131,21 @@ public class PlayerCombatManager : MonoBehaviour
                 {
                     enemyHealthManager.TakeScaleDamage();
                 }
+                GameObject blood = null;
+                if (transform.position.x - collider.gameObject.transform.position.x < 0)
+                     blood = Instantiate(bloodSplatter, collider.gameObject.transform.position, Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z));
+                else if (transform.position.x - collider.gameObject.transform.position.x > 0)
+                    blood = Instantiate(bloodSplatter, collider.gameObject.transform.position, Quaternion.Euler(transform.rotation.x, 180f, transform.rotation.z));
+
+                if (blood != null)
+                    Destroy(blood, 2f);
             }
         }
+    }
+
+    void PlaySlashSFX()
+    {
+        player.playerAudioManager.src.PlayOneShot(player.playerAudioManager.attack, 0.25f);
     }
 
     void OnDrawGizmos()

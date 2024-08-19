@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class ChildToParent : MonoBehaviour
 {
-    /*public PlayerManager PlayerManager;
+    public PlayerManager PlayerManager;
 
     private void Awake()
     {
         PlayerManager = GetComponentInParent<PlayerManager>();
     }
 
-    public void OpenSwordCollider()
+    public void playerDeath()
     {
-        PlayerManager.playerCombatManager.OpenSwordCollider();
-    }*/
+        PlayerManager.OnPlayerDeath();
+    }
+
+    public void ActivateGameOver()
+    {
+        PlayerManager.ActivateGameOver();
+    }
+
+    public void PlayDeathSFX()
+    {
+        PlayerManager.playerAudioManager.src.PlayOneShot(PlayerManager.playerAudioManager.death, 1.0f);
+    }
 }

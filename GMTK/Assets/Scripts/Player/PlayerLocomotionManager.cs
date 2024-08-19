@@ -31,6 +31,8 @@ public class PlayerLocomotionManager : MonoBehaviour
     [Header("Movement bools")]
     private bool stopMoving = false;
     private bool stopJumping = false;
+    public bool stopGravity = false;
+    public bool movementAnimationActive = false;
 
     [Header("Dashing")]
     public bool canDash = true;
@@ -53,7 +55,7 @@ public class PlayerLocomotionManager : MonoBehaviour
             return;
         }
 
-        if (player.playerInputManager.isDashing && canDash)
+        if (player.playerInputManager.isDashing && canDash && !stopMoving)
         {
             StartCoroutine(Dash());
         }
@@ -74,13 +76,17 @@ public class PlayerLocomotionManager : MonoBehaviour
 
     private void ApplyGravity()
     {
+        if (stopGravity)
+        {
+            return;
+        }
         if (player.isGrounded)
         {
             player.rb.AddForce(new Vector2(0, gravityOnGround), ForceMode2D.Force);
         }    
         else if (!player.isGrounded)
         {
-            player.rb.AddForce(new Vector2(0, gravityOnGround), ForceMode2D.Force);
+            player.rb.AddForce(new Vector2(0, gravityInAir), ForceMode2D.Force);
         }
            
         HandleInAirAnimations();
@@ -163,7 +169,12 @@ public class PlayerLocomotionManager : MonoBehaviour
             {
                 player.animator.SetBool("IsFalling", false);
                 player.animator.SetBool("IsMoving", true);
-
+                if (!movementAnimationActive)
+                {
+                    player.playerAudioManager.src.clip = player.playerAudioManager.run;
+                    //player.playerAudioManager.src.Play();
+                    movementAnimationActive = true;
+                }
                 if (!startingMoveAnimationPlayed)
                 {
                     startingMoveAnimationPlayed = true;
@@ -178,8 +189,9 @@ public class PlayerLocomotionManager : MonoBehaviour
         }
         else
         {
-            
-             player.animator.SetBool("IsMoving", false);
+            movementAnimationActive = false;
+            //player.playerAudioManager.src.Pause();
+            player.animator.SetBool("IsMoving", false);
             startingMoveAnimationPlayed = false;
 
             player.rb.velocity = new Vector2(0, player.rb.velocity.y);
@@ -224,6 +236,7 @@ public class PlayerLocomotionManager : MonoBehaviour
         canDash = false;
         isDashing = true;
         player.animator.SetBool("IsDashing", true);
+        player.playerAudioManager.src.PlayOneShot(player.playerAudioManager.dash);
         float originalGravity = player.rb.gravityScale;
         player.rb.gravityScale = 0f;
         player.rb.velocity = new Vector2(direction.normalized.x * dashingPower, 0f);
@@ -233,7 +246,7 @@ public class PlayerLocomotionManager : MonoBehaviour
         player.rb.gravityScale = originalGravity;
         player.animator.SetBool("IsDashing", false);
         isDashing = false;
-        player.rb.velocity = new Vector2(0f, 0f);
+        player.rb.velocity = new Vector2(5f, 0f);
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }

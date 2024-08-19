@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|e:\\github projects\\gmtk_jam\\gmtk\\assets\\playercombatmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\playercombatmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|e:\\github projects\\gmtk_jam\\gmtk\\assets\\pausebuttons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|solutionrelative:assets\\pausebuttons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|E:\\GitHub Projects\\GMTK_Jam\\GMTK\\assets\\enemyhealthmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|solutionrelative:assets\\enemyhealthmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\WorldEnemyWaveSpawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\WorldEnemyWaveSpawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\PlayerCombatManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\PlayerCombatManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|E:\\GitHub Projects\\GMTK_Jam\\GMTK\\assets\\scripts\\player\\playerlocomotionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerlocomotionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|E:\\GitHub Projects\\GMTK_Jam\\GMTK\\assets\\aimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|solutionrelative:assets\\aimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|E:\\GitHub Projects\\GMTK_Jam\\GMTK\\assets\\scripts\\player\\playermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,6 +37,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\GitHub Projects\\GMTK_Jam\\GMTK\\assets\\childtoparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\childtoparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\EnemyHealthManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\EnemyHealthManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\AIManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\AIManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -76,7 +84,31 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PauseButtons.cs",
+              "DocumentMoniker": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\PauseButtons.cs",
+              "RelativeDocumentMoniker": "Assets\\PauseButtons.cs",
+              "ToolTip": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\PauseButtons.cs",
+              "RelativeToolTip": "Assets\\PauseButtons.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T01:01:36.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "WorldEnemyWaveSpawner.cs",
+              "DocumentMoniker": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\WorldEnemyWaveSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\WorldEnemyWaveSpawner.cs",
+              "ToolTip": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\WorldEnemyWaveSpawner.cs",
+              "RelativeToolTip": "Assets\\WorldEnemyWaveSpawner.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T23:11:02.355Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "EnemyHealthManager.cs",
               "DocumentMoniker": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\EnemyHealthManager.cs",
               "RelativeDocumentMoniker": "Assets\\EnemyHealthManager.cs",
@@ -99,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "AIManager.cs",
               "DocumentMoniker": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\AIManager.cs",
               "RelativeDocumentMoniker": "Assets\\AIManager.cs",
@@ -123,16 +155,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "PlayerCombatManager.cs",
               "DocumentMoniker": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\PlayerCombatManager.cs",
               "RelativeDocumentMoniker": "Assets\\PlayerCombatManager.cs",
               "ToolTip": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\PlayerCombatManager.cs",
               "RelativeToolTip": "Assets\\PlayerCombatManager.cs",
-              "ViewState": "AQIAAGgAAAAAAAAAAAAgwHoAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-17T05:36:06.615Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-17T05:36:06.615Z"
             },
             {
               "$type": "Document",
@@ -148,7 +178,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PlayerLocomotionManager.cs",
               "DocumentMoniker": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\Scripts\\Player\\PlayerLocomotionManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerLocomotionManager.cs",

@@ -12,6 +12,11 @@ public class PlayerManager : MonoBehaviour
     public GameObject legs;
     public PlayerLocomotionManager playerLocomotionManager;
     public PlayerCombatManager playerCombatManager;
+    public GameObject gameOver;
+    public GameObject pauseMenu;
+    public PlayerAudioManager playerAudioManager;
+
+    public bool isPaused = false;
 
     [Header("Animation")]
     public Animator animator;
@@ -29,6 +34,11 @@ public class PlayerManager : MonoBehaviour
 
     [Header("Stats")]
     public float maxScale = 7f;
+    public float deathThreshold = 2.75f;
+    public bool isDead = false;
+
+    [Header("Sprite")]
+    Color originalColor;
 
     [SerializeField] private float groundCheckRadius = 2f;
     private void Awake()
@@ -38,6 +48,8 @@ public class PlayerManager : MonoBehaviour
         playerInputManager = GetComponent<PlayerInputManager>();
         playerLocomotionManager = GetComponent<PlayerLocomotionManager>();
         playerCombatManager = GetComponent<PlayerCombatManager>();
+        originalColor = spriteRenderer.color;
+        playerAudioManager = GetComponent<PlayerAudioManager>();
         
     }
     private void Start()
@@ -52,9 +64,8 @@ public class PlayerManager : MonoBehaviour
         if (Time.time > nextTimeToScale)
         {
             nextTimeToScale = Time.time + scaleRate;
-            transform.localScale = new Vector3(transform.localScale.x - scaleLoss, transform.localScale.y - scaleLoss, transform.localScale.z);
+            ChangeScale(-scaleLoss, false);
         }
-
 
         // TESTINGGGGGGGGGg
         
@@ -80,11 +91,18 @@ public class PlayerManager : MonoBehaviour
 
     public void ChangeScale(float scale, bool playHitAnim)
     {
+        if (isDead) return;
         if (scale < 0 && playHitAnim)
         {
-            animator.CrossFade("TakeHit", 0.1f);
+            StartCoroutine(FlashRed());
         }
-        if (transform.localScale.x + scale < maxScale)
+
+
+        if (transform.localScale.x + scale < deathThreshold)
+        {
+            animator.CrossFade("PlayerDeath", 0.1f);
+        }
+        else if (transform.localScale.x + scale < maxScale)
         {
             transform.localScale = new Vector3(transform.localScale.x + scale, transform.localScale.y + scale, 1f);
         }
@@ -93,7 +111,46 @@ public class PlayerManager : MonoBehaviour
             transform.localScale = new Vector3(maxScale, maxScale, 1f);
         }
     }
+    
+    public void OnPlayerDeath()
+    {
+        isDead = true;
+        playerLocomotionManager.stopGravity = true;
+        playerLocomotionManager.StopAllMovements(Mathf.Infinity);
+        rb.bodyType = RigidbodyType2D.Static;
+        Collider2D collider = GetComponent<Collider2D>();
+        collider.enabled = false;
 
+    }
+
+    public void ActivateGameOver()
+    {
+        Time.timeScale = 0f;
+        gameOver.SetActive(true);
+    }
+
+    public void TogglePauseMenu()
+    {
+        if (isPaused)
+        {
+            isPaused = false;
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1f;
+        }
+        else
+        {
+            isPaused = true;
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+        }
+    }
+    public IEnumerator FlashRed()
+    {
+        spriteRenderer.color = new Color(1f, 0f, 0f, originalColor.a);
+
+        yield return new WaitForSecondsRealtime(0.1f);
+        spriteRenderer.color = originalColor;
+    }
     private void OnDrawGizmos()
     {
         // Draw a red wire sphere to represent the OverlapSphere
