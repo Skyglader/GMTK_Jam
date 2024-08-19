@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class DestroyAfterTime : MonoBehaviour
 {
+
+    public float destroyTime = 5f;
     private void Start()
     {
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, destroyTime);
     }
 }

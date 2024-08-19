@@ -15,8 +15,8 @@ public class GameOverText : MonoBehaviour
     {
         waveSpawner = WorldEnemyWaveSpawner.instance;
         if (waveSpawner.numWaves > 1)
-            textMeshPro.text = "Game Over\n" + "You lasted " + waveSpawner.numWaves + " rounds.";
+            textMeshPro.text = "Game Over\n" + "You lasted " + waveSpawner.numWaves + " rounds.\n" + "Your record is " + WorldEnemyWaveSpawner.bestWave;
         else
-            textMeshPro.text = "Game Over\n" + "You lasted " + waveSpawner.numWaves + " round.";
+            textMeshPro.text = "Game Over\n" + "You lasted " + waveSpawner.numWaves + " round.\n" + "Your record is " + WorldEnemyWaveSpawner.bestWave;
     }
 }

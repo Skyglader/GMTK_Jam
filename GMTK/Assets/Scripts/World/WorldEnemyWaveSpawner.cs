@@ -17,6 +17,7 @@ public class WorldEnemyWaveSpawner : MonoBehaviour
     public float distanceAwayFromPlayer;
 
     public int numWaves = 0;
+    public static int bestWave = 0;
 
     public static WorldEnemyWaveSpawner instance;
 
@@ -33,6 +34,11 @@ public class WorldEnemyWaveSpawner : MonoBehaviour
         if (waveIsDone)
         {
             StartCoroutine(waveSpawner());
+        }
+
+        if (numWaves > bestWave)
+        {
+            bestWave = numWaves;
         }
     }
 

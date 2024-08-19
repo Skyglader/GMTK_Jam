@@ -142,6 +142,7 @@ public class PlayerLocomotionManager : MonoBehaviour
     {
         if (stopMoving)
         {
+            player.rb.velocity = Vector2.zero;
             return;
         }
 

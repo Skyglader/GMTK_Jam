@@ -22,6 +22,7 @@ public class PlayerCombatManager : MonoBehaviour
     public bool stopAllAttacks = false;
     public GameObject bloodSplatter;
 
+    float originalPitch;
 
     [Header("Damage and Heal Values")]
     public float healPerHit;
@@ -35,6 +36,10 @@ public class PlayerCombatManager : MonoBehaviour
     private void Awake()
     {
         player = GetComponentInParent<PlayerManager>();
+    }
+    private void Start()
+    {
+        originalPitch = player.playerAudioManager.src.pitch;
     }
 
     private void Update()
@@ -145,7 +150,15 @@ public class PlayerCombatManager : MonoBehaviour
 
     void PlaySlashSFX()
     {
+        player.playerAudioManager.src.pitch = Random.Range(1f, 2f);
         player.playerAudioManager.src.PlayOneShot(player.playerAudioManager.attack, 0.25f);
+        StartCoroutine(resetPitch());
+    }
+
+    public IEnumerator resetPitch()
+    {
+        yield return new WaitForSecondsRealtime(0.1f);
+        player.playerAudioManager.src.pitch = originalPitch;
     }
 
     void OnDrawGizmos()
