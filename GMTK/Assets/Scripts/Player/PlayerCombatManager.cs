@@ -143,7 +143,7 @@ public class PlayerCombatManager : MonoBehaviour
                     blood = Instantiate(bloodSplatter, collider.gameObject.transform.position, Quaternion.Euler(transform.rotation.x, 180f, transform.rotation.z));
 
                 if (blood != null)
-                    Destroy(blood, 2f);
+                    Destroy(blood, 1f);
             }
         }
     }

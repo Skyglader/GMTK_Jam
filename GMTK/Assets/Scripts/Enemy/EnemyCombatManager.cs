@@ -79,9 +79,9 @@ public class EnemyCombatManager : MonoBehaviour
         if (manager.transform.localScale != pastScale)
         {
             if (manager.transform.position.x - manager.target.transform.position.x < 0)
-                staffOffset.x -= manager.transform.localScale.x;
+                staffOffset.x -= manager.transform.localScale.x / 5;
             else
-                staffOffset.x += manager.transform.localScale.x;
+                staffOffset.x += manager.transform.localScale.x /5;
 
         }
         Vector3 adjustedOffset = new Vector3(Mathf.Sign(fireBallStaff.transform.localScale.x) * staffOffset.x, staffOffset.y, staffOffset.z);

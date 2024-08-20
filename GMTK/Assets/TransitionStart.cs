@@ -7,6 +7,7 @@ public class TransitionStart : MonoBehaviour
 {
     // Start is called before the first frame update
     AudioSource src;
+    public bool hardMode = false;
     private void Start()
     {
         // Ensure that the AudioSource is assigned. You can also assign it via the inspector.
@@ -32,6 +33,19 @@ public class TransitionStart : MonoBehaviour
     }
     private void StartGame()
     {
-        SceneManager.LoadScene("Game");
+        if (!hardMode)
+        {
+            SceneManager.LoadScene("Game");
+        }
+        else
+        {
+            SceneManager.LoadScene("Hard Game");
+        }
+
+    }
+
+    public void setHardMode(bool value)
+    {
+        hardMode = value;
     }
 }

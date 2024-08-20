@@ -8,7 +8,9 @@ public class PauseButtons : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1.0f;
-        SceneManager.LoadScene("Game");
+        if (SceneManager.GetActiveScene().name == "Game") SceneManager.LoadScene("Game");
+        else if (SceneManager.GetActiveScene().name == "Hard Game") SceneManager.LoadScene("Hard Game");
+
     }
 
     public void MainMenu()

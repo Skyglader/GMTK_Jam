@@ -168,7 +168,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   stopDistance: 8
-  attackResetTime: 2
+  attackResetTime: 1.75
   enemyClass: 0
 --- !u!114 &5239051875169323136
 MonoBehaviour:
@@ -405,7 +405,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 256
-  enemyDamage: 0.6
+  enemyDamage: 0.85
   wizard: 0
   sprite: {fileID: 3531815195386792508}
   manager: {fileID: 0}

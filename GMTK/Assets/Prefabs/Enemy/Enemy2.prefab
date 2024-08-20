@@ -405,7 +405,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 256
-  enemyDamage: 0.5
+  enemyDamage: 0.65
   wizard: 1
   sprite: {fileID: 824140243536194665}
   manager: {fileID: 0}

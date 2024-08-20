@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class SoundSettings : MonoBehaviour
 {
     public AudioMixer audioMixer;
-    public static float savedMusicVolume;
-    public static float savedSFXVolume;
+    public static float savedMusicVolume = 2;
+    public static float savedSFXVolume = 2;
 
     public static SoundSettings instance;
     public Slider musicSlider;
@@ -23,7 +23,7 @@ public class SoundSettings : MonoBehaviour
     private void OnEnable()
     {
         SetMusicVolume(savedMusicVolume);
-        musicSlider.value = savedSFXVolume;
+        musicSlider.value = savedMusicVolume;
         SetSFXVolume(savedSFXVolume);
         sfxSlider.value = savedSFXVolume;  
     }

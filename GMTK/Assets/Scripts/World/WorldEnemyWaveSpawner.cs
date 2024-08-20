@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WorldEnemyWaveSpawner : MonoBehaviour
 {
@@ -17,7 +18,8 @@ public class WorldEnemyWaveSpawner : MonoBehaviour
     public float distanceAwayFromPlayer;
 
     public int numWaves = 0;
-    public static int bestWave = 0;
+    public static int bestNormalWave = 0;
+    public static int bestHardWave = 0;
 
     public static WorldEnemyWaveSpawner instance;
 
@@ -25,8 +27,8 @@ public class WorldEnemyWaveSpawner : MonoBehaviour
     {
         if (instance == null)  
             instance = this;
-        else
-            Destroy(gameObject);
+        
+     
         spawners = gameObject.GetComponentsInChildren<Transform>();
     }
     private void Update()
@@ -36,9 +38,13 @@ public class WorldEnemyWaveSpawner : MonoBehaviour
             StartCoroutine(waveSpawner());
         }
 
-        if (numWaves > bestWave)
+        if (SceneManager.GetActiveScene().name == "Game" && numWaves > bestNormalWave)
         {
-            bestWave = numWaves;
+            bestNormalWave = numWaves;
+        }
+        else if (SceneManager.GetActiveScene().name == "Hard Game" && numWaves > bestHardWave)
+        {
+            bestHardWave = numWaves;
         }
     }
 
@@ -61,21 +67,30 @@ public class WorldEnemyWaveSpawner : MonoBehaviour
                     foundValidSpawner = true;
                     GameObject enemy = Instantiate(enemies[randomEnemy], spawners[randomSpawner].position, Quaternion.identity);
 
+                    
 
                     
                     AIManager storedEnemyManager;
                     storedEnemyManager = enemy.GetComponent<AIManager>();
                     if (storedEnemyManager.enemyClass == AIManager.EnemyClass.Wizard2)
                     {
+                        float randomSize = Random.Range(1.6f, 2.2f);
                         storedEnemyManager.stopDistance = Random.Range(12, 19);
+                        storedEnemyManager.transform.localScale = new Vector3(randomSize, randomSize, 1f);
+                        
                     }
                     else if (storedEnemyManager.enemyClass == AIManager.EnemyClass.Reaper)
                     {
-                        storedEnemyManager.stopDistance = Random.Range(5, 8);
+                        float randomSize = Random.Range(1.6f, 3f);
+                        storedEnemyManager.stopDistance = Random.Range(8, 9);
+                        storedEnemyManager.transform.localScale = new Vector3(randomSize, randomSize, 1f);
+
                     }
                     else if (storedEnemyManager.enemyClass == AIManager.EnemyClass.Wizard)
                     {
-                        storedEnemyManager.stopDistance = Random.Range(5, 8);
+                        storedEnemyManager.stopDistance = Random.Range(7, 9);
+                        float randomSize = Random.Range(1.6f, 2.5f);
+                        storedEnemyManager.transform.localScale = new Vector3(randomSize, randomSize, 1f);
                     }
 
 

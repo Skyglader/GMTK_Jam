@@ -141,8 +141,7 @@ public class PlayerLocomotionManager : MonoBehaviour
     private void HandlePlayerMovement()
     {
         if (stopMoving)
-        {
-            player.rb.velocity = Vector2.zero;
+        { 
             return;
         }
 
@@ -237,7 +236,7 @@ public class PlayerLocomotionManager : MonoBehaviour
         canDash = false;
         isDashing = true;
         player.animator.SetBool("IsDashing", true);
-        player.playerAudioManager.src.PlayOneShot(player.playerAudioManager.dash);
+        player.playerAudioManager.src.PlayOneShot(player.playerAudioManager.dash,0.5f);
         float originalGravity = player.rb.gravityScale;
         player.rb.gravityScale = 0f;
         player.rb.velocity = new Vector2(direction.normalized.x * dashingPower, 0f);
