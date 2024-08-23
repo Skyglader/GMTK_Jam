@@ -3,19 +3,19 @@
   "WorkspaceRootPath": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|E:\\GitHub Projects\\GMTK_Jam\\GMTK\\assets\\scripts\\player\\playerlocomotionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerlocomotionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|e:\\github projects\\gmtk_jam\\gmtk\\assets\\scripts\\player\\playercombatmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|E:\\GitHub Projects\\GMTK_Jam\\GMTK\\assets\\scripts\\player\\playercombatmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playercombatmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|e:\\github projects\\gmtk_jam\\gmtk\\assets\\soundsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|e:\\github projects\\gmtk_jam\\gmtk\\assets\\scripts\\player\\playerlocomotionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerlocomotionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|E:\\GitHub Projects\\GMTK_Jam\\GMTK\\assets\\soundsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|solutionrelative:assets\\soundsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|e:\\github projects\\gmtk_jam\\gmtk\\assets\\scripts\\ui\\gameovertext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|E:\\GitHub Projects\\GMTK_Jam\\GMTK\\assets\\scripts\\ui\\gameovertext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4775266-212F-6D56-F591-7F752BCD4B93}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\gameovertext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -43,10 +43,6 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\AstarPathfindingProject\\Editor\\AstarUpdateChecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\GitHub Projects\\GMTK_Jam\\GMTK\\assets\\playerinputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\playerinputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\GitHub Projects\\GMTK_Jam\\GMTK\\assets\\childtoparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\childtoparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -66,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -83,26 +79,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PlayerInputManager.cs",
-              "DocumentMoniker": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\PlayerInputManager.cs",
-              "RelativeDocumentMoniker": "Assets\\PlayerInputManager.cs",
-              "ToolTip": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\PlayerInputManager.cs",
-              "RelativeToolTip": "Assets\\PlayerInputManager.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABkAAABUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-16T21:58:59.109Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "PlayerCombatManager.cs",
               "DocumentMoniker": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\Scripts\\Player\\PlayerCombatManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerCombatManager.cs",
               "ToolTip": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\Scripts\\Player\\PlayerCombatManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerCombatManager.cs",
-              "ViewState": "AQIAAJcAAAAAAAAAAAAqwJoAAAAlAAAA",
+              "ViewState": "AQIAAJcAAAAAAAAAAAAqwKIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-19T20:21:01.963Z",
               "EditorCaption": ""
@@ -117,8 +100,7 @@
               "RelativeToolTip": "Assets\\SoundSettings.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T19:12:55.305Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-19T19:12:55.305Z"
             },
             {
               "$type": "Document",
@@ -130,8 +112,7 @@
               "RelativeToolTip": "Assets\\Scripts\\UI\\GameOverText.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAACXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T18:57:02.712Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-19T18:57:02.712Z"
             },
             {
               "$type": "Document",
@@ -170,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "EnemyHealthManager.cs",
               "DocumentMoniker": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\EnemyHealthManager.cs",
               "RelativeDocumentMoniker": "Assets\\EnemyHealthManager.cs",
@@ -193,7 +174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "AIManager.cs",
               "DocumentMoniker": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\AIManager.cs",
               "RelativeDocumentMoniker": "Assets\\AIManager.cs",
@@ -205,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "ChildToParent.cs",
               "DocumentMoniker": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\ChildToParent.cs",
               "RelativeDocumentMoniker": "Assets\\ChildToParent.cs",
@@ -229,13 +210,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PlayerLocomotionManager.cs",
               "DocumentMoniker": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\Scripts\\Player\\PlayerLocomotionManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerLocomotionManager.cs",
               "ToolTip": "E:\\GitHub Projects\\GMTK_Jam\\GMTK\\Assets\\Scripts\\Player\\PlayerLocomotionManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerLocomotionManager.cs",
-              "ViewState": "AQIAAOMAAAAAAAAAAAA2wPEAAAAkAAAA",
+              "ViewState": "AQIAAOQAAAAAAAAAAAAUwPEAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-16T20:45:52.303Z",
               "EditorCaption": ""

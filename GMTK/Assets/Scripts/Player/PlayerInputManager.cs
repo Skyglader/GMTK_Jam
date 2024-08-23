@@ -52,26 +52,7 @@ public class PlayerInputManager : MonoBehaviour
             playerManager.TogglePauseMenu();
         }
 
-        // Use the input states in your game logic
-        if (isJumping)
-        {
-            // Handle jumping
-        }
-
-        if (isAttacking)
-        {
-            // Handle attacking
-        }
-
-        if (isDashing)
-        {
-            // Handle dashing
-        }
-
-        if (isPausing)
-        {
-            // Handle pausing
-        }
+        
     }
     public Vector2 GetMoveDirection()
     {
